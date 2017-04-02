@@ -1,0 +1,49 @@
+version: '2'
+
+volumes:
+    db-data:
+
+services:
+    data:
+        image: stefanorg/data
+        volumes:
+            - db-data:/var/lib/mysql
+
+    workspace:
+        image: stefanorg/data
+        volumes:
+            #container configuration
+            - "${HOME}/.composer:/home/dockerdev/.composer"
+            - "${HOME}/.ssh:/home/dockerdev/.ssh"
+            - ./logs:/opt/wildfly/logs
+
+    db:
+        image: percona/percona-server:latest
+        expose:
+            - "3306"
+        ports:
+            - "3306:3306"
+        volumes_from:
+            - data
+        environment:
+            MYSQL_DATABASE: app
+            MYSQL_USER: appuser
+            MYSQL_PASSWORD: apppwd
+            MYSQL_ROOT_PASSWORD: 123
+
+    wildfly:
+        image: jboss/wildfly:latest
+        expose:
+            - "8080"
+            - "8443"
+            - "9990"
+        ports:
+            - "8080:8080"
+            - "8443:8443"
+            - "9990:9990"
+        volumes_from:
+            - workspace
+        links:
+            - db
+        environment:
+            JBOSS_LOG_DIR: /opt/wildfly/logs
