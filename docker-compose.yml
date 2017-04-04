@@ -4,11 +4,6 @@ volumes:
     db-data:
 
 services:
-    data:
-        image: stefanorg/data
-        volumes:
-            - db-data:/var/lib/mysql
-
     workspace:
         image: stefanorg/data
         volumes:
@@ -23,8 +18,8 @@ services:
             - "3306"
         ports:
             - "3306:3306"
-        volumes_from:
-            - data
+        volumes:
+            - db-data:/var/lib/mysql
         environment:
             MYSQL_DATABASE: app
             MYSQL_USER: appuser
@@ -32,7 +27,7 @@ services:
             MYSQL_ROOT_PASSWORD: 123
 
     wildfly:
-        image: jboss/wildfly:latest
+        build: docker/wildfly
         expose:
             - "8080"
             - "8443"
