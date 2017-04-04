@@ -76,11 +76,11 @@
     "sass": {
         /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "HelloWorld.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "HelloWorld.view" then
+         * sass/src and sass/var directories. For example, "RestApplication.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "RestApplication.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "HelloWorld.view.Foo" to "sass/src/HelloWorld/view/Foo.scss".
+         * "RestApplication.view.Foo" to "sass/src/RestApplication/view/Foo.scss".
          */
         "namespace": "HelloWorld",
 

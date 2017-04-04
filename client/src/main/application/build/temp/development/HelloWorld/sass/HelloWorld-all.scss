@@ -601,7 +601,7 @@ $current-resource-root: $theme-triton-resource-root;
 $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/modern/theme-triton/sass/etc/all';
 
-/* including package HelloWorld */
+/* including package RestApplication */
 $HelloWorld-resource-root: '' !default;
 $HelloWorld-resource-path: 'images' !default;
 $current-package: false;
@@ -686,7 +686,7 @@ $relative-image-path-for-uis: $theme-triton-resource-path;
 @import '../../../../../ext/modern/theme-triton/sass/var/tab/Tab';
 @import '../../../../../ext/modern/theme-triton/sass/var/tab/Bar';
 
-/* including package HelloWorld */
+/* including package RestApplication */
 $HelloWorld-resource-root: '' !default;
 $HelloWorld-resource-path: 'images' !default;
 $current-package: false;

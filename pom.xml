@@ -13,7 +13,21 @@
     <name>HelloWorld</name>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>3.1.2.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-json-p-provider</artifactId>
+            <version>3.1.2.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-servlet-initializer</artifactId>
+            <version>3.1.2.Final</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -37,7 +51,7 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>1.2.0.Alpha4</version>
                 <configuration>
-                    <hostname>localhost</hostname>
+                    <hostname>app.dev.local</hostname>
                     <port>9990</port>
                     <username>admin</username>
                     <password>admin</password>
