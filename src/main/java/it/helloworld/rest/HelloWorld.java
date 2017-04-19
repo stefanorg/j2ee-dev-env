@@ -11,7 +11,7 @@ import java.util.HashMap;
 /**
  * Created by n4z4 on 04/04/17.
  */
-@Path("/hello")
+@Path("hello")
 @Produces({"application/json"})
 public class HelloWorld {
 

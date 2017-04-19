@@ -9,10 +9,6 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "users")
-@NamedQueries({
-        @NamedQuery(name = "User.findAll", query = "SELECT u from User u"),
-        @NamedQuery(name = "User.findById", query = "SELECT u from User u where u.id = :id")
-})
 public class User implements Serializable{
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
